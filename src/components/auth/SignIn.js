@@ -21,15 +21,15 @@ export default class SignIn extends Component {
   render() {
     return (
       <div className="container">
-        <form onSubmit={this.handleSubmit} className="white">
-          <h5 className="grey-text text-darken-3">Sign In</h5>
+        <form onSubmit={this.handleSubmit} className="grey darken-3">
+          <h5 className="white-text">Sign In</h5>
           <div className="input-field">
             <label className="email">Email</label>
-            <input type="email" id="email" onChange={this.handleChange}/>
+            <input className="white-text" type="email" id="email" onChange={this.handleChange}/>
           </div>
           <div className="input-field">
             <label className="password">Password</label>
-            <input type="password" id="password" onChange={this.handleChange}/>
+            <input className="white-text" type="password" id="password" onChange={this.handleChange}/>
           </div>
           <div className="input-field">
             <button className="btn blue lighten-1">Sign In</button>

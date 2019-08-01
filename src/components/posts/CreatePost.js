@@ -25,20 +25,20 @@ class CreatePost extends Component {
   render() {
     return (
       <div className="container">
-        <form onSubmit={this.handleSubmit} className="white">
-          <h5 className="grey-text text-darken-3">Create New Post</h5>
+        <form onSubmit={this.handleSubmit} className="grey darken-3">
+          <h5 className="white-text">Create New Post</h5>
           <div className="input-field">
             <label htmlFor="title">Title</label>
-            <input type="text" id="title" onChange={this.handleChange} />
+            <input className="white-text" type="text" id="title" onChange={this.handleChange} />
           </div>
           <div className="input-field">
             <label htmlFor="link">Link</label>
-            <input type="url" id="link" onChange={this.handleChange} />
+            <input className="white-text" type="url" id="link" onChange={this.handleChange} />
           </div>
           <div className="input-field">
             <label htmlFor="content">Content</label>
             <textarea
-              className="materialize-textarea"
+              className="materialize-textarea white-text"
               id="content"
               onChange={this.handleChange}
             />

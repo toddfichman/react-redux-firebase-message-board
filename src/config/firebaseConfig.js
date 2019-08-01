@@ -16,7 +16,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 //firestore in firebase's database
-firebase.firestore().settings({ timestampsInSnapshots: true });
+firebase.firestore();
 
 // this allows us to interact with firebase
 // functionality elsewhere in the app

@@ -4,9 +4,28 @@ export const createPost = post => {
     // make async call here
     // then dispatch action to reducer
     // w/ data from async call
-    dispatch({
-      type: "CREATE_POST",
-      post: post
-    });
+
+    const firestore = getFirestore();
+    //reference to 'posts' collection
+    firestore.collection("posts").add({
+      ...post,
+      authorFirstName: "Todd",
+      authorLastName: "F",
+      authorId: "12345",
+      createdAt: new Date()
+    })
+    .then(() => {
+      dispatch({
+        type: "CREATE_POST",
+        post: post
+      });
+    })
+    .catch((err) => {
+      dispatch({
+        type: "CREATE_POST_ERROR",
+        err: err
+      });
+    })
+    
   };
 };

@@ -1,16 +1,19 @@
 import React from "react";
 import PostSummary from "./PostSummary";
+import {Link} from 'react-router-dom'
 
 const PostList = ({ posts }) => {
-  console.log(posts);
+  // console.log(posts[0].id);
   return (
     <div className="post-list section">
       {posts && posts.map(post => {
         return (
-          <PostSummary
-            key={post.id}
-            post={post}
-          />
+          <Link key={post.id} to={`/posts/${post.id}`}>
+            <PostSummary
+              
+              post={post}
+            />
+          </Link>
         );
       })}
 

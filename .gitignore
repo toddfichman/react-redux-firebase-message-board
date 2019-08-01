@@ -25,3 +25,4 @@ yarn-error.log*
 
 /public/redux-with-async.png
 /public/collection-setup.png
+/public/auth-setup.png
