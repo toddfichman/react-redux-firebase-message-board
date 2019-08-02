@@ -1,7 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
+import { signOut } from "../../store/actions/authActions";
 
-const SignedInLinks = () => {
+const SignedInLinks = (props) => {
   return (
     <ul className="right">
       <li>
@@ -9,14 +11,14 @@ const SignedInLinks = () => {
           to="/new-post"
           activeStyle={{
             fontWeight: "bold",
-            backgroundColor: 'rgba(0,0,0,0.1)'
+            backgroundColor: "rgba(0,0,0,0.1)"
           }}
         >
           New Post
         </NavLink>
       </li>
       <li>
-        <NavLink to="/">Logout</NavLink>
+        <a onClick={props.signOut} to="/">Logout</a>
       </li>
       <li>
         <NavLink to="/" className="btn btn-floating blue-grey darken-4">
@@ -27,4 +29,11 @@ const SignedInLinks = () => {
   );
 };
 
-export default SignedInLinks;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut())
+  }
+}
+
+
+export default connect(null, mapDispatchToProps)(SignedInLinks);

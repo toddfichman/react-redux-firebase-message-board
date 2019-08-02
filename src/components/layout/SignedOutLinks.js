@@ -23,7 +23,7 @@ const SignedOutLinks = () => {
           }}
           to="/signin"
         >
-          Login
+          Sign In
         </NavLink>
       </li>
     </ul>

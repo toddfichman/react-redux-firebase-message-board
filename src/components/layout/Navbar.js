@@ -6,15 +6,15 @@ import { connect } from "react-redux";
 import { firebaseConnect } from "react-redux-firebase";
 
 const Navbar = props => {
+  const {auth} = props
+  console.log(auth)
   return (
     <nav className="nav-wrapper blue lighten-3">
       <div className="container">
         <Link to="/" className="brand-logo left">
           Logo{" "}
         </Link>
-        {props.auth.isEmpty ? <SignedOutLinks /> : <SignedOutLinks />}
-        {/* <SignedOutLinks />
-        <SignedOutLinks /> */}
+        {auth.isEmpty ? <SignedOutLinks /> : <SignedInLinks />}
       </div>
     </nav>
   );

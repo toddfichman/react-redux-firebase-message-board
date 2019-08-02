@@ -25,16 +25,24 @@ const store = createStore(
       })
     ), 
     reduxFirestore(firebaseConfig),
-    reactReduxFirebase(firebaseConfig)
+    reactReduxFirebase(firebaseConfig, {attachAuthIsReady: true})
   )
 );
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById("root")
-);
+
+// waits for firebase auth to complete 
+// before rendering to DOM
+  // prevents nav links flickering
+store.firebaseAuthIsReady.then(() => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById("root")
+  );
+})
+
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
