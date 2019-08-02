@@ -4,14 +4,15 @@ export const createPost = post => {
     // make async call here
     // then dispatch action to reducer
     // w/ data from async call
-
     const firestore = getFirestore();
+    const profile = getState().firebase.profile;
+    const authorId = getState().firebase.auth.uid
     //reference to 'posts' collection
     firestore.collection("posts").add({
       ...post,
-      authorFirstName: "Todd",
-      authorLastName: "F",
-      authorId: "12345",
+      authorFirstName: profile.firstName,
+      authorLastName: profile.lastName,
+      authorId: authorId,
       createdAt: new Date()
     })
     .then(() => {

@@ -11,7 +11,8 @@ import { Provider } from "react-redux"; // Provider binds react and redux
 import thunk from "redux-thunk";
 import { getFirestore, reduxFirestore } from "redux-firestore";
 import { getFirebase, reactReduxFirebase } from "react-redux-firebase";
-import firebaseConfig from './config/firebaseConfig';
+import firebaseConfig from "./config/firebaseConfig";
+import { tsExternalModuleReference } from "@babel/types";
 
 // pass in root reducer
 const store = createStore(
@@ -23,16 +24,19 @@ const store = createStore(
         getFirebase,
         getFirestore
       })
-    ), 
+    ),
     reduxFirestore(firebaseConfig),
-    reactReduxFirebase(firebaseConfig, {attachAuthIsReady: true})
+    reactReduxFirebase(firebaseConfig, {
+      useFirestoreForProfile: true, //connects firebase to firesotre for user info
+      userProfile: 'users', // telling firebase which firestore collection to connect for profiles
+      attachAuthIsReady: true
+    })
   )
 );
 
-
-// waits for firebase auth to complete 
+// waits for firebase auth to complete
 // before rendering to DOM
-  // prevents nav links flickering
+// prevents nav links flickering
 store.firebaseAuthIsReady.then(() => {
   ReactDOM.render(
     <Provider store={store}>
@@ -40,9 +44,7 @@ store.firebaseAuthIsReady.then(() => {
     </Provider>,
     document.getElementById("root")
   );
-})
-
-
+});
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

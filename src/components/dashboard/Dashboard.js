@@ -11,7 +11,6 @@ import {Redirect} from 'react-router-dom'
 class Dashboard extends Component {
   render() {
     const { posts, auth } = this.props;
-    console.log(posts);
 
     if(auth.isEmpty) {
       return <Redirect to="/signin"/>
@@ -33,7 +32,6 @@ class Dashboard extends Component {
 
 // state is the state in redux store
 const mapStateToProps = state => {
-  console.log(state);
   return {
     posts: state.firestore.ordered.posts,
     auth: state.firebase.auth

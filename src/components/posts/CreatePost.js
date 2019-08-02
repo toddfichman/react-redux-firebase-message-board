@@ -22,7 +22,7 @@ class CreatePost extends Component {
     event.preventDefault();
     console.log(this.props);
     this.props.createPost(this.state);
-    this.setState({ title: "", content: "", link: "" });
+    this.props.history.push('/') //redirects
   };
 
   render() {
