@@ -24,7 +24,7 @@ export const signOut = () => {
       dispatch({type: 'SIGNOUT_SUCCESS'})
     })
     .catch((err) => {
-      dispatch({type: 'SIGNOUT_FAILURE', err})
+      dispatch({type: 'SIGNOUT_ERROR', err})
     })
   }
 };
@@ -48,7 +48,7 @@ export const signUp = (newUser) => {
       dispatch({type: 'SIGNUP_SUCCESS'})
     })
     .catch((err) => {
-      dispatch({type: 'SIGNUP_FAILURE', err})
+      dispatch({type: 'SIGNUP_ERROR', err})
     })
 
     
