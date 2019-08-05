@@ -5,6 +5,7 @@ import { signOut } from "../../store/actions/authActions";
 
 const SignedInLinks = (props) => {
   const {user} = props
+  console.log(user.initials, 'i')
   return (
     <ul className="right">
       <li>

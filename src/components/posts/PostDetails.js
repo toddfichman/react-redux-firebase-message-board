@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
+import moment from 'moment'
 
 const PostDetails = props => {
   const { post, auth } = props;
@@ -27,7 +28,7 @@ const PostDetails = props => {
             <div>
               Posted by {post.authorFirstName} {post.authorLastName}
             </div>
-            <div>Date</div>
+            <div>{moment(post.createdAt.toDate()).format('lll')}</div>
           </div>
           {/* COMMENTS FROM OTHER USERS COULD GO HERE */}
           {/* NEED TO CREATE NEW DIV SECTION */}
