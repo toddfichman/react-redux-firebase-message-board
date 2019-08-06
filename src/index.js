@@ -12,7 +12,6 @@ import thunk from "redux-thunk";
 import { getFirestore, reduxFirestore } from "redux-firestore";
 import { getFirebase, reactReduxFirebase } from "react-redux-firebase";
 import firebaseConfig from "./config/firebaseConfig";
-import { tsExternalModuleReference } from "@babel/types";
 
 // pass in root reducer
 const store = createStore(
@@ -30,7 +29,8 @@ const store = createStore(
       useFirestoreForProfile: true, //connects firebase to firesotre for user info
       userProfile: 'users', // telling firebase which firestore collection to connect for profiles
       attachAuthIsReady: true
-    })
+    }),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
 

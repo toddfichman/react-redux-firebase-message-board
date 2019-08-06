@@ -3,7 +3,7 @@ import PostSummary from "./PostSummary";
 import {Link} from 'react-router-dom'
 
 const PostList = ({ posts }) => {
-  // console.log(posts[0].id);
+  console.log(posts, 'posts');
   return (
     <div className="post-list section">
       {posts && posts.map(post => {

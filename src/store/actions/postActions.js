@@ -13,7 +13,7 @@ export const createPost = post => {
       authorFirstName: profile.firstName,
       authorLastName: profile.lastName,
       authorId: authorId,
-      createdAt: new Date()
+      createdAt: new Date(),
     })
     .then(() => {
       dispatch({

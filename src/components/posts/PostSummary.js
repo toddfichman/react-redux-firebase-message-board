@@ -2,7 +2,6 @@ import React from "react";
 import moment from 'moment'
 
 const PostSummary = ({post}) => {
-  console.log(post)
   return (
     <div className="card z-depth-1 post-summary">
       <div className="card-content grey-text text-darken-3">
