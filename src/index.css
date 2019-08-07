@@ -52,13 +52,21 @@ textarea.materialize-textarea:focus:not([readonly]){
   box-shadow: none;
 }
 
+
 .notifications {
   border-radius: 10px;
+  position: fixed;
 }
 
-.notification {
+.notification-link {
   margin-bottom: 10px;
+  background-color: #b6b6b6;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
 }
+
+
 
 .post-summary {
   border-radius: 10px;
@@ -66,4 +74,8 @@ textarea.materialize-textarea:focus:not([readonly]){
 
 .pagination {
   text-align: center;
+}
+
+.active {
+  background-color: #90caf9 !important;
 }
