@@ -11,11 +11,17 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
     <div>
       <ul className="pagination">
         {pageNumbers.map(number => (
-          <li key={number} className={(number === currentPage ? "active" : null)}>
-            <a onClick={() => paginate(number)} href="#!">{number}</a>
+          <li
+            key={number}
+            className={
+              "page-number-container " + (number === currentPage ? "active" : null)
+            }
+          >
+            <a className="page-number-content" onClick={() => paginate(number)} href="#!">
+              {number}
+            </a>
           </li>
         ))}
-        
       </ul>
     </div>
   );

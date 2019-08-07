@@ -55,12 +55,19 @@ textarea.materialize-textarea:focus:not([readonly]){
 
 .notifications {
   border-radius: 10px;
-  position: fixed;
+}
+
+/* Anything bigger than phone */
+@media (min-width:641px) {
+  .notifications {
+    border-radius: 10px;
+    position: fixed;
+  }
 }
 
 .notification-link {
   margin-bottom: 10px;
-  background-color: #b6b6b6;
+  background-color: #d6d6d681;
   padding: 5px;
   margin: 5px;
   border-radius: 5px;
@@ -74,8 +81,19 @@ textarea.materialize-textarea:focus:not([readonly]){
 
 .pagination {
   text-align: center;
+  /* width: 150%; */
 }
 
 .active {
   background-color: #90caf9 !important;
+}
+
+.page-number-container {
+  /* display: block !important; */
+}
+
+.page-number-content {
+  font-size: 2.4rem !important;
+  display: block !important;
+  margin:0 auto !important; 
 }

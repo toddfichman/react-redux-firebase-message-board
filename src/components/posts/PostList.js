@@ -10,6 +10,7 @@ const PostList = ({ posts }) => {
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage, setPostsPerPage] = useState(10)
   console.log(currentPage, "currentPage");
+  
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;

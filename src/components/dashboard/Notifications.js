@@ -17,7 +17,7 @@ const Notifications = props => {
                       key={notification.id}
                       to={`/posts/${notification.postId}`}
                     >
-                      <li className="notification-link">
+                      <li className="notification-link hoverable">
                         <span className="blue-text lighten-3">
                           {notification.user}{" "}
                         </span>
