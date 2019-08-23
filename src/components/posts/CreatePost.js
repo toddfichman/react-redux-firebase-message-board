@@ -12,7 +12,7 @@ class CreatePost extends Component {
   };
 
   handleChange = event => {
-    console.log("handlechage");
+    // console.log("handlechage");
     this.setState({
       [event.target.id]: event.target.value
     });

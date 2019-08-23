@@ -7,6 +7,7 @@ import { firebaseConnect } from "react-redux-firebase";
 
 const Navbar = props => {
   const {auth} = props
+  console.log(auth, 'auth')
   return (
     <nav className="nav-wrapper blue lighten-3">
       <div className="container">

@@ -49,6 +49,7 @@ input:-webkit-autofill {
 }
 
 input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=url]:not(.browser-default):focus:not([readonly]),
 input[type=email]:not(.browser-default):focus:not([readonly]),
 input[type=password]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]){
@@ -56,6 +57,12 @@ textarea.materialize-textarea:focus:not([readonly]){
   box-shadow: none;
 }
 
+.loading {
+  position:absolute;
+  top: 40%;
+  left: 40%;
+  color: #3099f0;
+}
 
 .notifications {
   border-radius: 10px;
@@ -85,19 +92,28 @@ textarea.materialize-textarea:focus:not([readonly]){
 
 .pagination {
   text-align: center;
-  /* width: 150%; */
+  margin-top: 3rem;
 }
 
-.active {
+.active-page {
   background-color: #90caf9 !important;
+  
+}
+
+.active-number {
+  color: white !important;
+  
 }
 
 .page-number-container {
-  /* display: block !important; */
+  margin: 0 5px;
+  padding: 0 10px;
+  height: 50px !important;
 }
 
 .page-number-content {
   font-size: 2.4rem !important;
   display: block !important;
   margin:0 auto !important; 
+  line-height: 45px !important;
 }

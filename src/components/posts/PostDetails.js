@@ -5,9 +5,11 @@ import { compose } from "redux";
 import { Redirect } from "react-router-dom";
 import moment from 'moment'
 
-const PostDetails = props => {
-  const { post, auth } = props;
+import CreatePostComment from './CreatePostComment';
 
+const PostDetails = props => {
+  const { post, auth, id } = props;
+  // console.log(id, 'post')
   if (auth.isEmpty) {
     return <Redirect to="/signin" />;
   }
@@ -18,10 +20,11 @@ const PostDetails = props => {
         <div className="card z-depth-0">
           <div className="card-content">
             <span className="card-title">
-              {post.title} - {post.id}
+              {post.title}
             </span>
             {/* POSSIBLY INCLUDE LINK / IMAGE */}
             {/* LIKE REDDIT COPY CAT */}
+            <a href={post.link}>{post.link}</a>
             <p>{post.content}</p>
           </div>
           <div className="card-action grey lighten-5 grey-text">
@@ -31,7 +34,8 @@ const PostDetails = props => {
             <div>{moment(post.createdAt.toDate()).format('lll')}</div>
           </div>
           {/* COMMENTS FROM OTHER USERS COULD GO HERE */}
-          {/* NEED TO CREATE NEW DIV SECTION */}
+          <CreatePostComment postId={id}/>
+          {/* NEED TO CREATE A FORM SECTION TO SUMBIT */}
         </div>
       </div>
     );
@@ -50,7 +54,8 @@ const mapStateToProps = (state, ownProps) => {
   const post = posts ? posts[id] : null;
   return {
     post: post,
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    id: id
   };
 };
 

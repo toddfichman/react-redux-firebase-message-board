@@ -9,24 +9,35 @@ import { compose } from "redux";
 import { Redirect } from "react-router-dom";
 
 class Dashboard extends Component {
-
   render() {
     const { posts, auth, notifications } = this.props;
-    console.log(posts, "notifications");
     if (auth.isEmpty) {
       return <Redirect to="/signin" />;
     }
 
     if (!posts) {
-      return <h3 className="container">Loading...</h3>
+      return (
+        <div className="loading preloader-wrapper big active">
+          <div className="spinner-layer spinner-blue-only">
+            <div className="circle-clipper left">
+              <div className="circle" />
+            </div>
+            <div className="gap-patch">
+              <div className="circle" />
+            </div>
+            <div className="circle-clipper right">
+              <div className="circle" />
+            </div>
+          </div>
+        </div>
+      );
     }
-    
+
     return (
       <div className="dashboard container">
         <div className="row">
           <div className="col s12 m6">
             <PostList posts={posts} />
-            
           </div>
           <div className="notifications-container col s12 m5 offset-m1">
             <Notifications notifications={notifications} />

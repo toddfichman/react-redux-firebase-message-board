@@ -10,7 +10,6 @@ class SignIn extends Component {
   };
 
   handleChange = event => {
-    console.log("handlechage");
     this.setState({
       [event.target.id]: event.target.value
     });
