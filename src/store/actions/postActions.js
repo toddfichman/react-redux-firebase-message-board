@@ -47,7 +47,7 @@ export const createPostComment = comment => {
     const firestore = getFirestore();
     const profile = getState().firebase.profile;
     const authorId = getState().firebase.auth.uid
-    console.log(comment.postId, 'redux')
+    console.log(firestore, 'redux')
     //reference to 'posts' collection
     firestore.collection("posts").doc(comment.postId).update({
       comments: firestore.FieldValue.arrayUnion({

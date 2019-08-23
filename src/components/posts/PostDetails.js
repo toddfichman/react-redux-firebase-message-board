@@ -6,6 +6,7 @@ import { Redirect } from "react-router-dom";
 import moment from 'moment'
 
 import CreatePostComment from './CreatePostComment';
+import PostCommentsList from './PostCommentsList';
 
 const PostDetails = props => {
   const { post, auth, id } = props;
@@ -36,6 +37,7 @@ const PostDetails = props => {
           {/* COMMENTS FROM OTHER USERS COULD GO HERE */}
           <CreatePostComment postId={id}/>
           {/* NEED TO CREATE A FORM SECTION TO SUMBIT */}
+          <PostCommentsList post={post}/>
         </div>
       </div>
     );

@@ -31,7 +31,7 @@ class CreatePostComment extends Component {
     return (
       <div className="">
         <form onSubmit={this.handleSubmit} className="grey darken-1" style={{borderRadius: 0}}>
-          <h5 className="white-text">Create New Comment</h5>
+          <h5 className="white-text">Leave A Comment</h5>
           <div className=" white-text">
             <div>
               Signed In As {user.firstName} {user.lastName}
@@ -73,9 +73,8 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default compose(
-  connect(
+export default connect(
     mapStateToProps,
     mapDispatchToProps
   )
-)(CreatePostComment);
+(CreatePostComment);
