@@ -14,6 +14,9 @@ class CreatePostComment extends Component {
     this.setState({
       [event.target.id]: event.target.value
     });
+    this.setState({
+      content: event.target.value
+    });
   };
 
   handleSubmit = event => {
@@ -29,8 +32,8 @@ class CreatePostComment extends Component {
     // console.log(user, postId);
 
     return (
-      <div className="">
-        <form onSubmit={this.handleSubmit} className="grey darken-1" style={{borderRadius: 0}}>
+      <div className="comment-input-container">
+        <form onSubmit={this.handleSubmit} className="grey darken-1" style={{borderRadius: '5px', marginTop: '10px'}}>
           <h5 className="white-text">Leave A Comment</h5>
           <div className=" white-text">
             <div>

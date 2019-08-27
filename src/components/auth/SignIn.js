@@ -29,7 +29,7 @@ class SignIn extends Component {
 
     return (
       <div className="container">
-        <form onSubmit={this.handleSubmit} className="grey darken-3">
+        <form onSubmit={this.handleSubmit} className="grey darken-1">
           <h5 className="white-text">Sign In</h5>
           <div className="input-field">
             <label className="email">Email</label>

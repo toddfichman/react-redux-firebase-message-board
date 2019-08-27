@@ -12,7 +12,7 @@ const Navbar = props => {
     <nav className="nav-wrapper blue lighten-3">
       <div className="container">
         <Link to="/" className="brand-logo left">
-          Logo{" "}
+          soundOff{" "}
         </Link>
         {auth.isEmpty ? <SignedOutLinks /> : <SignedInLinks />}
       </div>

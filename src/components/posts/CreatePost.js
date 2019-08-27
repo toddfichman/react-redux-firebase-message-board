@@ -34,7 +34,7 @@ class CreatePost extends Component {
 
     return (
       <div className="container">
-        <form onSubmit={this.handleSubmit} className="grey darken-3">
+        <form onSubmit={this.handleSubmit} className="grey darken-1">
           <h5 className="white-text">Create New Post</h5>
           <div className="input-field">
             <label htmlFor="title">Title</label>
@@ -46,7 +46,7 @@ class CreatePost extends Component {
             />
           </div>
           <div className="input-field">
-            <label htmlFor="link">Link</label>
+            <label htmlFor="link">Link (Optional)</label>
             <input
               className="white-text"
               type="url"

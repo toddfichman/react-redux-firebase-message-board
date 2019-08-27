@@ -41,6 +41,7 @@ exports.userJoined = functions.auth.user().onCreate(user => {
     .get()
     .then(doc => { // return doc of user in users collection
       const newUser = doc.data();
+      console.log(newUser, 'newUser')
       const notification = {
         content: 'Signed Up',
         user: `${newUser.firstName} ${newUser.lastName}`,

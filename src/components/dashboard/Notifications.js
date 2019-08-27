@@ -17,14 +17,14 @@ const Notifications = props => {
                       key={notification.id}
                       to={`/posts/${notification.postId}`}
                     >
-                      <li className="notification-link hoverable">
-                        <span className="blue-text lighten-3">
+                      <li className="notification-link hoverable grey darken-1">
+                        <span className="chip">
                           {notification.user}{" "}
                         </span>
-                        <span className="black-text">
+                        <span className="white-text">
                           {notification.content}{" "}
                         </span>
-                        <div className="grey-text">
+                        <div className="white-text">
                           {moment(notification.time.toDate()).fromNow()}
                         </div>
                       </li>
@@ -32,14 +32,14 @@ const Notifications = props => {
                   );
                 } else {
                   return (
-                    <li className="notification-signup" key={notification.id}>
-                      <span className="blue-text lighten-3">
+                    <li className="notification-signup grey darken-1" key={notification.id}>
+                      <span className="chip">
                         {notification.user}{" "}
                       </span>
-                      <span className="black-text">
+                      <span className="white-text">
                         {notification.content}{" "}
                       </span>
-                      <div className="grey-text">
+                      <div className="white-text">
                         {moment(notification.time.toDate()).fromNow()}
                       </div>
                     </li>

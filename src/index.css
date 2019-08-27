@@ -23,7 +23,8 @@ form {
   border-radius: 10px;
 }
 
-form button, form h5 {
+form button,
+form h5 {
   margin: 10px 0;
 }
 
@@ -38,27 +39,32 @@ input {
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 30px #424242 inset !important;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #424242 inset !important;
 }
 
 input:-webkit-autofill {
   -webkit-text-fill-color: white !important;
 }
 
-input[type=text]:not(.browser-default):focus:not([readonly]),
-input[type=url]:not(.browser-default):focus:not([readonly]),
-input[type=email]:not(.browser-default):focus:not([readonly]),
-input[type=password]:not(.browser-default):focus:not([readonly]),
-textarea.materialize-textarea:focus:not([readonly]){
+input[type="text"]:not(.browser-default):focus:not([readonly]),
+input[type="url"]:not(.browser-default):focus:not([readonly]),
+input[type="email"]:not(.browser-default):focus:not([readonly]),
+input[type="password"]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
   border-color: #90caf9;
   box-shadow: none;
 }
 
+.nav {
+  height: 100px;
+  line-height: 100px;
+}
+
 .loading {
-  position:absolute;
+  position: absolute;
   top: 40%;
   left: 40%;
   color: #3099f0;
@@ -69,7 +75,7 @@ textarea.materialize-textarea:focus:not([readonly]){
 }
 
 /* Anything bigger than phone */
-@media (min-width:641px) {
+@media (min-width: 641px) {
   .notifications {
     border-radius: 10px;
     position: fixed;
@@ -78,17 +84,31 @@ textarea.materialize-textarea:focus:not([readonly]){
 
 .notification-link {
   margin-bottom: 10px;
-  background-color: #d6d6d681;
-  padding: 5px;
+  padding: 10px;
   margin: 5px;
   border-radius: 5px;
+  margin-bottom: 15px;
 }
 
-
+.notification-signup {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
 
 .post-summary {
   border-radius: 10px;
 }
+
+.card .card-action:last-child {
+  border-radius: 10px;
+}
+
+.post-details-content {
+  margin-top: 15px;
+}
+
 
 .pagination {
   text-align: center;
@@ -97,12 +117,10 @@ textarea.materialize-textarea:focus:not([readonly]){
 
 .active-page {
   background-color: #90caf9 !important;
-  
 }
 
 .active-number {
   color: white !important;
-  
 }
 
 .page-number-container {
@@ -114,6 +132,30 @@ textarea.materialize-textarea:focus:not([readonly]){
 .page-number-content {
   font-size: 2.4rem !important;
   display: block !important;
-  margin:0 auto !important; 
+  margin: 0 auto !important;
   line-height: 45px !important;
+}
+
+.post-details {
+  border-radius: 10px;
+}
+
+.comment-input-container {
+  margin: 0;
+}
+
+.comments-container {
+  border-radius: 10px;
+}
+
+.collection.with-header .collection-header {
+  border-bottom: none;
+}
+
+.comment-content {
+  border-radius: 10px;
+}
+
+.collection .collection-item {
+  border-bottom: none;
 }

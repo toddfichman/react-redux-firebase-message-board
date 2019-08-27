@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
-import moment from 'moment'
+import moment from "moment";
 
-import CreatePostComment from './CreatePostComment';
-import PostCommentsList from './PostCommentsList';
+import CreatePostComment from "./CreatePostComment";
+import PostCommentsList from "./PostCommentsList";
 
 const PostDetails = props => {
   const { post, auth, id } = props;
@@ -14,31 +14,29 @@ const PostDetails = props => {
   if (auth.isEmpty) {
     return <Redirect to="/signin" />;
   }
-  
+
   if (post) {
     return (
-      <div className="container section post-details">
-        <div className="card z-depth-0">
+      <div className="container section ">
+        <div className="card z-depth-0 post-details">
           <div className="card-content">
-            <span className="card-title">
-              {post.title}
-            </span>
-            {/* POSSIBLY INCLUDE LINK / IMAGE */}
-            {/* LIKE REDDIT COPY CAT */}
+            <span className="card-title">{post.title}</span>
             <a href={post.link}>{post.link}</a>
-            <p>{post.content}</p>
+            <div className="post-details-content">
+              <p>{post.content}</p>
+            </div>
           </div>
           <div className="card-action grey lighten-5 grey-text">
             <div>
               Posted by {post.authorFirstName} {post.authorLastName}
             </div>
-            <div>{moment(post.createdAt.toDate()).format('lll')}</div>
+            <div>{moment(post.createdAt.toDate()).format("lll")}</div>
           </div>
-          {/* COMMENTS FROM OTHER USERS COULD GO HERE */}
-          <CreatePostComment postId={id}/>
-          {/* NEED TO CREATE A FORM SECTION TO SUMBIT */}
-          <PostCommentsList post={post}/>
         </div>
+        
+        <CreatePostComment postId={id} />
+        
+        <PostCommentsList post={post} />
       </div>
     );
   } else {
